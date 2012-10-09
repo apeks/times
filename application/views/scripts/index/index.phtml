@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Times Note 记录我们共同的时光</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="zeyuan.wl@alibaba-inc.com" content="">
+
+<link rel="stylesheet" media="all" href="lib/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" media="all" href="lib/bootstrap/css/daterangepicker.css" />
+<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-wysihtml5.css"></link>
+<link rel="stylesheet" media="all" href="css/times.css" />
+
+
+<style type="text/css">
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+</style>
+</head>
+
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner" id="headView">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+				</a> <a class="brand logo" href="#">鸡鸡</a>
+				<div class="nav-collapse collapse">
+					<button type="button" class="btn pull-right" id="btnStartWrite">写一条</button>
+					<p class="navbar-text pull-right" style="display: none">
+						Logged in as <a href="#" class="navbar-link">Username</a>
+					</p>
+					<ul class="nav">
+						<li class="active"><a href="#">主页</a></li>
+						<li><a href="#about">设置</a></li>
+						<li><a href="#contact">关于</a></li>
+						<li>
+							<form class="navbar-search pull-left">
+								<input type="text" class="search-query" placeholder="Search">
+							</form>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" >
+	
+	<!-- 写note视图 -->
+	<div class="row" id="writeView">
+		<div class="span3">
+		 	<div class="btn-group" data-toggle="buttons-radio">
+				 <button class="btn">便签</button>
+				 <button class="btn">日记</button>
+				 <button class="btn">周记</button>
+			</div>
+			 <div class="well well-small">
+				 <div id="myNoteListForWrite">
+				 	这里是我的活动列表
+				 </div>
+			 </div>
+		</div>
+		<div class="span9">
+			<div  class="write_box">
+				<div class="inputBox">
+					<input type="text" id="inputTitle" class="inputTxt onFocus" style="width:60%" placeholder="可选标题">
+					<!--此为获得焦点状态，默认请删除‘focus’-->
+				</div>
+				<textarea id="contentEditor" style="width: 100%" rows="22" placeholder="开始记录你的时光">
+				</textarea>
+				<button class="btn btn-primary" type="button" id="btnPublish">发布</button>
+				<button class="btn" type="button" id="btnSaveDraft">保存草稿</button>
+				<button class="btn" type="button" id="btnCancel">取消</button>
+			</div><!-- write_box -->
+		</div><!-- span9 -->
+	</div><!-- row -->
+	
+	<!-- 看note视图 -->
+	<div class="row" id="readView">
+		<!--/span 左边栏 -->
+		<div class="span3">
+			<div class="left-sidenav">					
+				<!-- user list -->
+				<div class="well ">
+					<div class="left-title">
+						<span>选择时段</span>
+					</div>
+					<div id="reportrange" class="datepicker">
+						<span></span> <b class="caret" style="margin-top: 8px"></b>
+					</div>
+				</div>
+				
+				<!-- user list -->
+				<div class="well " id="userListView">
+					<div class="left-title">
+						<span>选择小组</span>
+					</div>
+					<div class="teams" >
+						<select style="width:192px;">
+							<option>开发平台</option>
+							<option>实时计算</option>
+							<option>数据服务</option>
+							<option>前端开发</option>
+							<option>数据产品</option>
+						</select>
+					</div>
+					<div class="controls">
+						<ul class="nav nav-small nav-pills nav-pills-small">
+							<li id="btnCheckAll" > <a href="#">全选</a> </li>
+							<li id="btnUnCheckAll"> <a href="#">全不选</a> </li>
+							<li id="btnSwitchAll" > <a href="#">反选</a> </li>
+						</ul>
+					</div>
+					
+					
+					<div class="userList" id="userList"></div>
+				</div>
+				
+			</div> <!-- left sidenav -->
+			
+		</div> <!-- span3 --> 
+
+		<!--span 右侧内容区 -->
+		<div class="span9">
+		
+			<ul class="nav nav-pills">
+				<li class="active"><a href="#">全部</a></li>
+				<li><a href="#">便签</a></li>
+				<li><a href="#">日记</a></li>
+				<li><a href="#">周记</a></li>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">新建<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">便签</a></li>
+						<li><a href="#">日记</a></li>
+						<li><a href="#">周记</a></li>
+					</ul></li>
+			</ul>
+
+			<!-- 全部区 -->
+			<div id="noteListView" style="min-height: 800px;">
+				<div class="well well-small" style="display">
+					<a href="#">有新的Note，点击这里查看。</a>
+					<a class="close" data-dismiss="alert" href="#">&times;</a>
+				</div>
+				<div id="feedList" class="feedList" >
+					<div id="noteLoading" class="noteLoading">
+						<p>正在加载，请稍候......</p>
+					</div>
+					<ul id="noteList">
+						<li></li>
+						<!-- 这是一条note区域         -->
+						<!-- 这是一条note区域 end -->
+					</ul>
+				</div>
+			</div>
+
+		</div> <!--/span9-->
+	</div> <!--/row-->
+	
+		
+	
+	<footer>
+		<div class="well">
+			<p>
+				Create by <a href="mailto:zeyuan.wl@alibaba-inc.com">zeyuan.wl@alibaba-inc.com</a>
+			</p>
+			<ul class="footer-links">
+				<li><a href="www.tbdata.org">阿里集团数据公司</a></li>
+			</ul>
+		</div>
+	</footer>
+	</div> <!--container-->
+	
+
+	<!-- Modals -->
+
+
+	<!-- login modal -->
+	<div class="modal" style="display: none" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<span id="loginLabel">欢迎登陆 Team Note</span>
+		</div>
+		<div class="modal-body">
+			<form class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">用户名</label>
+					<div class="controls">
+						<input type="text" id="inputEmail" placeholder="Email">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPassword">密码</label>
+					<div class="controls">
+						<input type="password" id="inputPassword" placeholder="Password">
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<label class="checkbox"> <input type="checkbox">记住我
+						</label>
+					</div>
+					<a href> 忘记密码 </a>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+			<button class="btn btn-primary">登陆</button>
+		</div>
+	</div>
+
+	<!-- global config -->
+	<script type="text/javascript">
+	var TIMES = TIMES || {};
+	TIMES.Config = {
+		usersUrl : './user/list/id',
+		notesUrl : './note/list',
+		
+	};
+	</script>
+
+	<script type="text/javascript" src="lib/json2.js"></script>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/date.js"></script>
+	<script type="text/javascript" src="lib/underscore.js"></script>
+	<script type="text/javascript" src="lib/backbone.js"></script>
+	<script type="text/javascript" src="lib/localstorage.js"></script>
+	<script type="text/javascript" src="lib/wysihtml5-0.3.0.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/daterangepicker.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap-wysihtml5.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/utils.js"></script>
+
+	<script type="text/template" id="itemView">
+	<div class="headPic" style="width:5%;>
+		<a target="_blank" href="#" title="美食"><span></span></a> 
+		<img alt="" src="<%= avatar %>"> 
+	</div>
+	<div class="feedCon" style="width:95%;">
+		<span class="feedListCor"></span>
+
+		<!-- <div class="feedTitle"> <%= body %> </div> -->
+		
+		<div id="feedText_<%= id %>" class="feedText">
+			<div class="longtext_prv" id="small_13_49d0ba6333000919_92930">
+				<div>
+					<span id="small_<%= id %>long" class="long_pic">
+					<a target="_blank" href="#"><%= user_view_name %></a>&nbsp;:&nbsp;&nbsp;<%= body %>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="feedAttr">
+			<span class="feedFrom">
+				<span class="editby">
+						<%=mtime %>
+				</span>
+			</span>
+
+			<span class="feedAction">
+				<a href="javascript:void(0)" ><i class=" icon-retweet"></i>转载<em>(37)</em></a>
+				<a class="feedAttr_commend"><i class=" icon-comment"></i>评论<em>(44)</em></a>
+				<a class="loveBox"><i class="icon-heart"></i>喜欢<em>(100)</em></a>
+			<span>
+		</div>
+	</div>
+	</script>
+
+	<script type="text/template" id="userList-template">
+	<% _.each(users, function(user) {%>			
+	<div class="item " id="<%= user.id %>">
+		<img alt="" src="<%=user.avatar%>" style="width:28px">
+		<span><%= user.view_name %></span>
+	</div>
+	<%});%>
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+/**
+ * 页面入口，这里会初始化requirejs的代码依赖和启动应用程序
+ */
+require.config({
+	shim : {
+		'underscore' : {
+			exports : '_'
+		},
+		'backbone' : {
+			deps : ['underscore', 'jquery'],
+			exports : 'Backbone'
+		}
+	},
+	paths : {
+		jquery : '../lib/jquery.min',
+		backbone : '../lib/backbone',
+		underscore : '../lib/lodash.min',
+		localstorage : '../lib/localstorage'
+	}
+});
+
+/**
+ * 启动应用程序
+ */
+require([
+	'view/app',
+	'routers/router'
+], function(App, Workspace) {
+	/**
+	 * App加载后会直接运行，所以不需要new实例
+	 */
+	/**
+	 * 单页面应用程序由于使用锚点来记录用户操作，所以必须支持前进后退按钮
+	 */
+	new Workspace();
+	Backbone.history.start();
+});

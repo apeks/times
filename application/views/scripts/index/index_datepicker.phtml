@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<title>A date range picker for Twitter Bootstrap</title>
+		<link rel="stylesheet" type="text/css" media="all" href="lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="lib/bootstrap/css/daterangepicker.css" />
+		<script type="text/javascript" src="lib/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/date.js"></script>
+		<script type="text/javascript" src="lib/bootstrap/js/daterangepicker.js"></script>
+	</head>
+	<body>
+
+		<div class="container">
+			<div class="span12">
+
+				<h4>Options Usage Example</h4>
+
+				<div class="well">
+
+				    <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+				        <i class="icon-calendar icon-large"></i>
+				        <span></span> <b class="caret" style="margin-top: 8px"></b>
+				    </div>
+
+					<script type="text/javascript">
+					$(document).ready(function() {
+						$('#reportrange').daterangepicker(
+							{
+								ranges: {
+									'今天': ['today', 'today'],
+									'昨天': ['yesterday', 'yesterday'],
+									'最近七天': [Date.today().add({ days: -6 }), 'today'],
+									'最近三十天': [Date.today().add({ days: -29 }), 'today'],
+									'本月': [Date.today().moveToFirstDayOfMonth(), Date.today().moveToLastDayOfMonth()],
+									'上个月': [Date.today().moveToFirstDayOfMonth().add({ months: -1 }), Date.today().moveToFirstDayOfMonth().add({ days: -1 })]
+								},
+								opens: 'left',
+								format: 'yyyy/MM/dd',
+								startDate: Date.today(),
+								endDate: Date.today(),
+								minDate: '2012/01/01',
+								maxDate: '2013/01/01',
+						        	locale: {
+						            		applyLabel: '确定',
+						           			fromLabel: '从',
+						            		toLabel: '到',
+						            		customRangeLabel: '自定义日期范围',
+						            		daysOfWeek: ['日', '一', '二', '三', '四', '五','六'],
+						            		monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+						            		firstDay: 1
+						        	}
+							}, 
+							function(start, end) {
+								$('#reportrange span').html(start.toString('yyyy/MM/dd') + ' - ' + end.toString('yyyy/MM/dd'));
+							}
+						);
+
+						//Set the initial state of the picker label
+						$('#reportrange span').html(Date.today().toString('yyyy/MM/dd') + ' - ' + Date.today().toString('yyyy/MM/dd'));
+
+					});
+					</script>
+
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+</html>

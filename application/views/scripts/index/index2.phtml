@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>团队日志</title>
+<link rel="stylesheet" media="screen" href="./css/bootstrap.min.css"></link>
+<link rel="stylesheet" media="screen" href="./css/page.css"></link>
+</head>
+<body>
+	<div id="header"></div>
+	<div class="well well-large">
+		<div id="app" class="container app">
+			<div id="app-inner" class="row">
+				<div id="content" class="span8">
+					<div id="publish"></div>
+					<div id="articles" class="list"></div>
+				</div>
+				<div id="side" class="side span4"></div>
+			</div>
+		</div>
+	</div>
+	<div id="footer"></div>
+
+	<script type="text/javascript">
+			var TIMES = TIMES || {};
+			TIMES.Config = {
+				usersUrl : './user/list',
+				notesUrl : './note/list'
+			}
+	</script>
+
+	<script id="jiji-view-header" type="text/html">
+			<div class="header bar">
+				<div class="container">
+					<div class="logo pull-left">
+						时光
+					</div>
+				</div>
+			</div>
+		</script>
+
+	<script id="jiji-view-publish" type="text/html">
+			<div class="saying row">
+				<div class="avatar span1">
+					<img src="./img/teemo.jpg"/>
+				</div>
+				<div class="content span8">
+					<textarea name="content" id="new-note"></textarea>
+					<div class="toolbar">
+						<button class="btn pull-right" type="button">发布</button>
+					</div>
+				</div>
+			</div>
+		</script>
+
+	<script id="jiji-view-list" type="text/html">
+			<ul class="unstyled">
+				<% _.each(list, function(note) { %>
+					<li>
+						<div class="known row">
+							<div class="avatar span1">
+								<img src="<%= note.avatar %>"/>
+							</div>
+							<div class="content span8">
+								<p class="c-helper"><%= note.user_name %></p>
+								<h4><%= note.title %></h4>
+								<div class="article">
+										<%= note.body %>
+								</div>
+								<p class="c-helper date pull-right"><%= note.edit_time %></p>
+							</div>
+						</div>
+					</li>
+				<%});%>
+			</ul>
+		</script>
+
+	<script id="jiji-view-users" type="text/html">
+			<div class="side-inner">
+				<ul class="nav nav-tabs nav-stacked affix">
+					<li>
+						<a href="#dropdowns" class="member-search-wrapper">
+							<input type="text" name="username" placeholder="搜索用户" class="search"></input>
+						</a>
+					</li>
+					<% _.each(users, function(user) {%>
+						<li>
+							<a href="#user/<%=user.user_name%>"><%= user.view_name %></a>
+						</li>
+					<%});%>
+				</ul>
+			</div>
+		</script>
+
+	<script id="jiji-view-footer" type="text/html">
+			<div id="footer-inner" class="footer-inner bar">
+				<div class="container">
+					<div class="copyright pull-left">
+						<p>Powered by zeyuan@taobao.com</p>
+						<p>Copyright@2003-2012 Taobao.All Rights Reserved</p>
+					</div>
+					<div class="logo pull-right">
+						时光
+					</div>
+				</div>
+			</div>
+		</script>
+
+	<script type="text/javascript" src="./lib/require.min.js"
+		data-main="./js/main"></script>
+</body>
+</html>

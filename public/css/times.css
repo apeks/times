@@ -1,0 +1,326 @@
+@CHARSET "UTF-8";
+
+
+/* Base class */
+html, body, div, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, tt, var, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    border: 0px dotted gray;
+    font-style: normal;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    word-wrap: break-word;
+}
+
+body {
+  height: 100%;
+  font-family: "Microsoft Yahei","STHeiti","SimSun","Arail","Verdana","Helvetica","sans-serif";
+  font-size: 13px;
+}
+
+footer{
+	margin-top:50px;
+}
+
+.backToTop {
+    display: none;
+    width: 25px;
+    font-size:13px;
+    padding: 5px 0;
+    background-color: rgba(82, 168, 236, 0.8);
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    _position: absolute;
+    right: 10px;
+    bottom: 100px;
+    _bottom: "auto";
+    cursor: pointer;
+
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+        rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+        rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+        rgba(82, 168, 236, 0.6);
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+ 
+
+.left-title{
+	padding: 0px 0px 15px 10px;
+    font-size:14px;
+    font-weight: 500;
+    color : rgba(82, 168, 236, 0.8);
+}
+
+.datepicker {
+	width:180px;
+	background: #fff; 
+	cursor: pointer;
+	border: 1px solid #ccc;
+    padding: 5px 0 5px 10px;
+}
+
+
+ol, ul, li {
+    list-style: none outside none;
+}
+
+.feedList .noteLoading{
+	width: 100%;
+    height :100%;
+    z-index : 1000;
+    position : absolute;
+    background-color:#FFFFFF;
+}
+
+.feedList ul li {
+	margin-top: 5px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    font-weight: 400;
+    border-top: 1px solid #EEEEEE;
+}
+
+
+.feedList ul li:hover{
+	border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+}
+
+.feedList ul li .headPic {
+    float: left;
+    /*height: 100px;*/
+    overflow: hidden;
+    position: relative;
+    margin-top:15px;
+    
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+        rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+        rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+        rgba(82, 168, 236, 0.6);
+
+}
+
+.feedList ul li .headPic .a{
+    position:absolute;
+}
+
+
+.feedList ul li .feedCon {
+    float: left;
+    font-size: 12px;
+    padding: 10px 0 0px;
+    position: relative;
+}
+
+.feedList ul li .feedCon .feedListCor {
+    display: none;
+}
+
+
+.feedList ul li .feedCon .feedTitle {
+    color: #000000;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    padding: 0 30px;
+}
+
+.feedList ul li .feedCon .feedText {
+    clear: both;
+    color: #333333;
+    font-size: 14px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 0 30px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.feedList ul li .feedCon .feedInfo {
+    clear: both;
+    color: #999999;
+    font-size: 12px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+
+.feedList ul li .feedCon .longtext_prv {
+    overflow: hidden;
+}
+
+.feedList ul li .feedCon .feedText .longtext_all {
+    overflow: hidden;
+}
+
+
+.feedList ul li .feedCon .feedAttr {
+    clear: both;
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: -2px;
+    margin-top: 15px;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.feedList ul li .feedCon .feedAttr .tags {
+    position: relative;
+    white-space: nowrap;
+    word-break: break-all;
+    float: left;
+    overflow: hidden;
+    width: 120px;
+    text-align: left;
+}
+
+.feedList ul li .feedCon .feedAttr .tags a:hover {
+    color: #A9A9A9;
+    height: 19px;
+    line-height: 19px;
+    text-decoration: underline;
+}
+
+
+.feedList ul li .feedCon .feedAttr .tags .tagWrap .tagTit, 
+.feedList .itemDesc .tags .tagWrap .tagTit {
+    background: url("../img/nsidebar_bg.png") no-repeat scroll -96px -45px transparent;
+    display: inline-block;
+    height: 12px;
+    margin-right: 6px;
+    width: 12px;
+}
+
+.feedList ul li .feedCon .feedAttr .tags .tagWrap .tagList {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    margin-left: 3px;
+}
+
+.feedList ul li .feedCon .feedAttr .tags .tag {
+    background:#e1f0f7;
+    padding:0 10px;
+    border-radius:0px;
+    text-decoration:none;
+    margin:0 5px 0px 0;
+    float:left;
+}
+
+.feedList ul li .feedCon .feedAttr .tags .tag:hover {
+    background: none repeat scroll 0 0 #225599;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+.feedList ul li .feedCon .feedAttr .feedAction {
+    color: #A9A9A9;
+    display: inline-block;
+    line-height: normal;
+    vertical-align: baseline;
+    text-align: right;
+    width: 49%;
+}
+
+.feedList ul li .feedCon .feedAttr .feedAction a {
+    color: #A9A9A9;
+    display: inline-block;
+    line-height: normal;
+    margin-left: 12px;
+    vertical-align: baseline;
+}
+
+.feedList ul li .feedCon .feedAttr .feedAction a i{
+    margin-right: 5px;
+}
+
+.feedList ul li .feedCon .feedFrom {
+    color: #A9A9A9;
+    line-height: normal;
+    vertical-align: baseline;
+    display: inline-block;
+    text-align: left;
+    width: 49%;
+}
+
+.feedList ul li .feedCon .feedFrom .editby {
+    display: none;
+}
+
+.feedList ul li:hover .feedCon .feedFrom .editby {
+    display: inline-block;
+}
+
+
+#userListView .userList{
+	width:100%;
+    padding-top:0px;
+}
+
+.userList .item{
+	vertical-align: top;
+	padding:0px 0px 0px 0px;
+    margin :10px 5px 0px 0px; 
+	display:inline-block;
+    border: 1px solid #EBEBEB;
+    color: #0088CC;
+	border-color: rgba(82, 168, 236, 0.8);
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.userList .item:hover{
+    vertical-align: top;
+    padding:0px 0px 0px 0px;
+    margin :9px 4px -1px -1px; 
+    display:inline-block;
+    border: 2px solid #EBEBEB;
+    cursor: pointer;
+
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+        rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+        rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+        rgba(82, 168, 236, 0.6);
+
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+
+}
+
+.userList .unchecked{
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+}
+
+
+.userList .item  span{
+	display:inline-block;
+    vertical-align: top;
+    padding:5px 8px 0 8px;
+}

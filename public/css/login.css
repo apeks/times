@@ -1,0 +1,263 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 1em;
+	list-style: none;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+html {
+	background: #0d7bd5 url('../img/glow.png') no-repeat center center;
+	height: 100%;
+	_background: #0d7bd5;
+}
+
+body {
+	color: #b7d4ec;
+	color: rgba(255, 255, 255, .8);
+	font: 14px/22px 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans,
+		'Hiragino Sans GB', sans-serif;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+	position: relative;
+	height: 100%;
+	text-align: center;
+}
+
+body,label,input,textarea,select,button {
+	font-family: 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans,
+		'Hiragino Sans GB', sans-serif
+}
+
+a {
+	color: #b7d4ec;
+	color: rgba(255, 255, 255, .8);
+	-webkit-transition: color .1s ease, background-color .1s ease;
+}
+
+#login,#apply {
+	width: 480px;
+	height: 390px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -195px 0 0 -240px;
+}
+
+.used,.success,.failure,#apply form,#login form {
+	float: middle;
+	*width: 262px;
+	position: relative;
+}
+
+#login form {
+	
+}
+
+#login h1 {
+	float: middle;
+	width: 100%;
+    height: 50px;
+    font-family: "微软雅黑";
+    font-size: 36px;
+    color : #FFF;
+}
+
+#login h2 {
+    float: right;
+    width: 100%;
+    height: 80px;
+    font-family: "微软雅黑";
+    font-size: 18px;
+}
+
+.js label.aria {
+	position: absolute;
+	left: -999em;
+}
+
+.js #login label.remember_me {
+	display: inline;
+}
+
+#login .captcha {
+	margin-bottom: 18px;
+	text-align: left;
+}
+
+#login .captcha img {
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.text {
+	display: inline-block;
+	width: 248px;
+	padding: 10px;
+	margin: 0 0 18px;
+	font-size: 14px;
+	line-height: 18px;
+	background: #e8f4fc;
+	border: 1px solid #0d7bd5;
+	color: #888;
+	cursor: text;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .3), 0 1px 3px rgba(0, 0, 0, .3)
+		inset;
+	background-clip: padding-box;
+	border-radius: 0px;
+}
+
+input[type=email],input[type=password] {
+	ime-mode: disabled;
+}
+
+.text:focus {
+	background: #fff
+}
+
+.button {
+	background: #1e95e5;
+	color: #b7d4ec;
+	color: rgba(255, 255, 255, .8);
+	box-shadow: 0 1px 0 rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .15) inset;
+    margin-left:120px;
+	border: 1px solid #147dcd;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	line-height: 18px;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+	padding: 6px 15px;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 0px;
+	float: left;
+	-webkit-appearance: none;
+	*color: #b7d4ec;
+}
+
+.button:active {
+	background: #1d8fdb;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .15);
+}
+
+.button:focus {
+	box-shadow: 0 0 10px rgba(255, 255, 255, .5), 0 1px 0
+		rgba(255, 255, 255, .15) inset
+}
+
+.actions {
+	float: left;
+	margin: 6px 0 0 50px;
+	display: block;
+	*color: #b7d4ec;
+}
+
+.middot {
+	padding: 0 5px
+}
+
+.reset, .remember_me {
+	color: #b7d4ec;
+	color: rgba(255, 255, 255, .8);
+	*color: #b7d4ec;
+}
+
+.reg {
+	position: absolute;
+	top: 30px;
+	right: 40px;
+}
+
+.register {
+	display: inline-block;
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #b7d4ec;
+	color: rgba(255, 255, 255, .8);
+	background: rgba(0, 0, 0, .1);
+	padding: 3px 15px;
+	border-radius: 0px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .15), 0px 1px 3px
+	rgba(0, 0, 0, .2) inset;
+}
+
+.register:hover {
+	background: rgba(0, 0, 0, .15)
+}
+
+.footer {
+	width: 525px;
+	text-align: center;
+	position: absolute;
+	/*bottom: -150px;*/
+	bottom: -250px; /*iphone app landing*/
+	color: #61aae2;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+	padding: 0 0 10px;
+}
+
+.footer a {
+	color: #61aae2
+}
+
+textarea.text {
+	height: 80px;
+}
+
+.success {
+	background: url('/static/img/new_reg/ok.png') no-repeat center top;
+	padding: 100px 0 0;
+}
+
+.used {
+	background: url('/static/img/new_reg/error.png') no-repeat center top;
+	padding: 100px 0 0;
+}
+
+.failure {
+	color: #b7d4ec;
+	color: rgba(255, 255, 255, .8);
+	background: rgba(0, 0, 0, .1);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .15), 0px 1px 3px
+		rgba(0, 0, 0, .2) inset;
+	color: #b7d4ec\9;
+	background: #0c6ebf\9;
+	width: 242px;
+	border-radius: 0px;
+	padding: 10px;
+	text-align: left;
+	margin: 0 0 20px;
+}
+
+.failure li {
+	line-height: 1em;
+}
+
+.failure li+li {
+	margin-top: 10px;
+}
+
+.failure li i {
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	margin-right: 5px;
+	vertical-align: middle;
+	background: url(/static/img/new_reg/error-icon.png) no-repeat;
+}
+
+.failure li span {
+	vertical-align: middle;
+}
+
+.failure li a {
+	color: #9ed8ff;
+	text-decoration: underline;
+}
+
+.failure li a:hover {
+	color: white;
+}

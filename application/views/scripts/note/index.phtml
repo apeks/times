@@ -1,0 +1,3 @@
+<?php
+	$json = Zend_Json::encode($this->note);
+	echo Zend_Json::prettyPrint($json, array("indent" => " "));

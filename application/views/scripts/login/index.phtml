@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Team Note</title>
+<link rel="stylesheet" href="css/login.css" />
+<link rel="stylesheet" href="www.zhihu.com/static/css/new_reg/reg.css?1347699981557" />
+<script src="/lib/js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="login">
+		<h1>Team Note</h1>
+		<h2>记录我们共同的时光</h2>
+		<form class="login" action="https://www.zhihu.com/login" method="post" id="loginForm">
+			<input type="hidden" name="_xsrf" value="f3ee4823d1ca43c5971bc6f50615f81e" />
+			<div>
+				<label class="aria" for="email">邮箱</label> <input class="text" type="email" id="email" name="email" spellcheck="false" placeholder="邮 箱" autofocus tabindex="1">
+			</div>
+			<div>
+				<label class="aria" for="password">密码</label> <input class="text" type="password" id="password" name="password" placeholder="密 码" tabindex="2">
+			</div>
+			<input class="button" type="submit" value="登 录" tabindex="3">
+			<div class="actions">
+				<input id="remember_me" type="checkbox" name="rememberme" checked> <label class="remember_me" for="remember_me">记住我</label> <span class="middot">&middot;</span> <a class="reset"
+					href="/resetpassword">忘记密码？</a>
+			</div>
+			<div class="clearfix"></div>
+		</form>
+	</div>
+	<div class="reg">
+		<a href="/index" class="register">进去看看</a> <a href="/apply" class="register">注册帐号</a>
+	</div>
+</body>
+</html>

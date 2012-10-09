@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Times Note 记录我们共同的时光</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="zeyuan.wl@alibaba-inc.com" content="">
+
+<link rel="stylesheet" media="all" href="lib/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" media="all" href="lib/bootstrap/css/bootstrap-responsive.css">
+<link rel="stylesheet" media="all" href="lib/bootstrap/css/daterangepicker.css" />
+<link rel="stylesheet" media="all" href="css/times.css" />
+
+
+<style type="text/css">
+body {
+	padding-top: 0px;
+	padding-bottom: 40px;
+}
+</style>
+</head>
+
+<body>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+				</a> <a class="brand logo" href="#">Team Note</a>
+				<div class="nav-collapse collapse">
+					<a href="/login" class="navbar-text pull-right">登陆</a>
+					<p class="navbar-text pull-right" style="display: none">
+						Logged in as <a href="#" class="navbar-link">Username</a>
+					</p>
+					<ul class="nav">
+						<li class="active"><a href="#">主页</a></li>
+						<li><a href="#about">设置</a></li>
+						<li><a href="#contact">关于</a></li>
+						<li>
+							<form class="navbar-search pull-left">
+								<input type="text" class="search-query" placeholder="Search">
+							</form>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<!--/span 左边栏 -->
+			<div class="span3">
+				<div class="left-sidenav">
+					<div class="well well-small">
+						<div class="left-title">
+							<span>看看那些时光</span>
+						</div>
+						<div style="padding: 0px 0px 0px 0px">
+							<div id="reportrange" class="datepicker">
+								<span></span> <b class="caret" style="margin-top: 8px"></b>
+							</div>
+						</div>
+					</div>
+					<div class="well well-small">
+						<div class="left-title">
+							<span>看看那些人</span>
+						</div>
+						<div>
+							<select style="width: 100%">
+								<option>开发平台</option>
+								<option>实时计算</option>
+								<option>数据服务</option>
+								<option>前端开发</option>
+								<option>数据产品</option>
+							</select>
+						</div>
+						<div>
+							<button></button>
+							<button class="btn btn-small" type="button">全选</button>
+							<button class="btn btn-small" type="button">反选</button>
+						</div>
+
+						<ul class="nav nav-list" class="user_list" id="user-list">
+						</ul>
+					</div>
+				</div>
+				<!-- left sidenav -->
+			</div>
+
+			<!--span 右侧内容区 -->
+			<div class="span9 ">
+				<!-- Tab导航 -->
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#">全部</a></li>
+					<li><a href="#">即时记</a></li>
+					<li><a href="#">日记</a></li>
+					<li><a href="#">周记</a></li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">新建<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">随笔</a></li>
+							<li><a href="#">日报</a></li>
+							<li><a href="#">周报</a></li>
+						</ul></li>
+				</ul>
+
+				<!-- 全部区 -->
+				<div id="allnote" style="min-height: 1000px;">
+					<div id="new-wn"></div>
+					<textarea id="new-note" class="span9" rows="3" placeholder="开始记录你的时光">
+					</textarea>
+					<div class="alert alert-info">
+						<a href="#">有新的Note，点击这里查看。</a>
+						<button class="close">&times;</button>
+					</div>
+					<div id="note-loading" class="note-loading">
+						<p>正在加载，请稍候......</p>
+					</div>
+					<div id="feedList" class="feedList">
+						<ul id="note-list">
+							<li></li>
+							<!-- 这是一条note区域         -->
+							<!-- 这是一条note区域 end -->
+						</ul>
+					</div>
+				</div>
+
+				<!-- id=main -->
+			</div>
+			<!--/span-->
+		</div>
+		<!--/row-->
+
+		<!-- 时间轴 -->
+
+		<footer>
+			<div class="container">
+				<p class="pull-right">
+					<a href="#">Back to top</a>
+				</p>
+				<p>
+					Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a
+						href="http://twitter.com/fat" target="_blank">@fat</a>.
+				</p>
+				<p>
+					Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a
+						href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+				</p>
+				<p>
+					Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+				</p>
+				<ul class="footer-links">
+					<li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
+					<li><a href="https://github.com/twitter/bootstrap/issues?state=open">Submit issues</a></li>
+					<li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+	<!--/.fluid-container-->
+
+	<!-- Modals -->
+
+
+	<!-- login modal -->
+	<div class="modal" style="display: none" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<span id="loginLabel">欢迎登陆 Team Note</span>
+		</div>
+		<div class="modal-body">
+			<form class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">用户名</label>
+					<div class="controls">
+						<input type="text" id="inputEmail" placeholder="Email">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPassword">密码</label>
+					<div class="controls">
+						<input type="password" id="inputPassword" placeholder="Password">
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<label class="checkbox"> <input type="checkbox">记住我
+						</label>
+					</div>
+					<a href> 忘记密码 </a>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+			<button class="btn btn-primary">登陆</button>
+		</div>
+	</div>
+
+	<!-- global config -->
+	<script type="text/javascript">
+	var TIMES = TIMES || {};
+	TIMES.Config = {
+		usersUrl : './user/list/id',
+		notesUrl : './note/list',
+		
+	};
+	</script>
+
+	<script type="text/javascript" src="lib/json2.js"></script>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/date.js"></script>
+	<script type="text/javascript" src="lib/underscore.js"></script>
+	<script type="text/javascript" src="lib/backbone.js"></script>
+	<script type="text/javascript" src="lib/localstorage.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/daterangepicker.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+
+
+
+	<script type="text/template" id="item-template">
+	<div class="headPic" style="width:10%;>
+		<a target="_blank" href="#" title="美食"><span></span></a> 
+		<img alt="" src="img/teemo.jpg"> 
+		<!-- <a target="_blank" class="icon_tag" href="#">美食</a> -->
+	</div>
+	<div class="feedCon" style="width:90%;">
+		<span class="feedListCor"></span>
+		<span class="feedTagName"><a target="_blank" href="#"><span><%= user_id %>&nbsp;说 :</span></a></span>
+		<div class="feedFrom">
+			<!-- <a target="_blank" href="#"><%= user_id %></a> -->
+			<span class="editby">发表于&nbsp;<%= mtime %></span>
+		</div>
+		
+		<!-- <div class="feedTitle"> <%= body %> </div> -->
+		
+		<div id="feedText_<%= user_id %>" class="feedText">
+			<div class="longtext_prv" id="small_13_49d0ba6333000919_92930">
+				<div>
+					<span id="small_<%= user_id %>long" class="long_pic">
+					&nbsp; <%= body %> &nbsp;&nbsp;
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="feedAttr">
+			<div class="tags">
+				<div class="tagWrap">
+					<span class="tagTit"></span>
+					<span class="tagCon">
+						<span style="left: -1px; -moz-user-select: none;" class="tagList">
+							<span class="label label-info">美食</span>
+							<span class="label label-info">生活</span>
+						</span>
+					</span>
+				</div>
+			</div>
+			<a href="javascript:void(0)" onclick="xDB &amp;&amp; xDB.showReprint('49d0ba6333000919_92930', 0, this );return false;" from="qing" class="feedAttr_transfer">转载<em>(37)</em></a>
+			<a onclick="xDB &amp;&amp; xDB.showComment('49d0ba6333000919_92930', '1238415971', this, '49d0ba6333000919');return false;" blog_id="49d0ba6333000919" href="javascript:void(0)" from="qing" class="feedAttr_commend">评论<em>(44)</em></a>
+			<span class="loveBox">
+			   <span>
+				   <a href="#" onclick="xDB.like &amp;&amp; xDB.like('49d0ba6333000919_92930',this,'1238415971','49d0ba6333000919');return false;" class="love" from="qing" title="喜欢">喜欢<em>(39)</em></a>
+			   </span>
+			</span>
+		</div>
+	</div>
+	</script>
+
+	<script type="text/template" id="user-list-template">	
+	<% _.each(users, function(user) {%>			
+	<li>
+		<a id="<%= user.id %>" href="#">
+			<i class="icon-ok pull-left"></i><%= user.view_name %>
+			<span class="badge pull-right">周报已发</span>
+		</a>
+	</li>
+	<%});%>
+	</script>
+
+</body>
+</html>
