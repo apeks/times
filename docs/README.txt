@@ -1,4 +1,3 @@
-
 {
   "repositories": [
     {
@@ -250,31 +249,6 @@
       "created_at": "2013-04-21T07:37:57Z",
       "pushed_at": "2013-06-01T18:42:53Z",
       "pushed": "2013-06-01T18:42:53Z"
-    },
-    {
-      "type": "repo",
-      "username": "tshepang",
-      "name": "reveal",
-      "owner": "tshepang",
-      "homepage": null,
-      "description": "demo site for reveal liquidluck theme",
-      "language": "JavaScript",
-      "watchers": 0,
-      "followers": 0,
-      "forks": 0,
-      "size": 2352,
-      "open_issues": 0,
-      "score": 8.640832,
-      "has_downloads": true,
-      "has_issues": true,
-      "has_wiki": true,
-      "fork": false,
-      "private": false,
-      "url": "https://github.com/tshepang/reveal",
-      "created": "2013-04-13T21:18:10Z",
-      "created_at": "2013-04-13T21:18:10Z",
-      "pushed_at": "2013-06-29T12:45:48Z",
-      "pushed": "2013-06-29T12:45:48Z"
     },
     {
       "type": "repo",
